@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CareerScope | Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <img
+            src="careerscope.png"
+            alt="CareerScope"
+        >
+
+    </div>
+
+
+    <nav>
+
+        <a
+            href="#"
+            class="nav-item active"
+            id="dashboardLink"
+        >
+            <span>⌂</span>
+            Dashboard
+        </a>
+
+
+        <a
+            href="profile.html"
+            class="nav-item"
+            id="profileLink"
+        >
+            <span>👤</span>
+            My Profile
+        </a>
+
+
+        <a
+            href="#scoreSection"
+            class="nav-item"
+            id="scoreLink"
+        >
+            <span>📊</span>
+            My Score
+        </a>
+
+
+        <a
+            href="#rankingSection"
+            class="nav-item"
+            id="rankingLink"
+        >
+            <span>🏆</span>
+            Rankings
+        </a>
+
+
+        <a
+            href="#candidateSection"
+            class="nav-item"
+            id="candidateLink"
+        >
+            <span>⭐</span>
+            Top Candidates
+        </a>
+
+
+        <!-- SIMULATOR -->
+
+        <a
+            href="simulator.html"
+            class="nav-item"
+            id="simulatorLink"
+        >
+            <span>⚡</span>
+            Simulator
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a
+            href="#"
+            class="nav-item"
+            id="settingsLink"
+        >
+            <span>⚙</span>
+            Settings
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item logout"
+            id="logoutButton"
+        >
+            <span>↪</span>
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==================================================
+     MAIN CONTENT
+================================================== -->
+
+<main class="main-content">
+
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>
+                Dashboard
+            </h1>
+
+            <p>
+                Track your placement performance and ranking.
+            </p>
+
+        </div>
+
+
+        <div class="profile-mini">
+
+            <div class="avatar">
+                H
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Loading...
+                </strong>
+
+                <span>
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- WELCOME CARD -->
+
+    <section class="welcome-card">
+
+        <div>
+
+            <span class="small-label">
+                STUDENT DASHBOARD
+            </span>
+
+
+            <h2>
+                Loading...
+            </h2>
+
+
+            <p>
+                Keep improving your placement parameters
+                to increase your overall placement score.
+            </p>
+
+        </div>
+
+
+        <div class="welcome-score">
+
+            <span>
+                Overall Score
+            </span>
+
+
+            <strong>
+                0.00
+            </strong>
+
+
+            <small>
+                / 10
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STAT CARDS -->
+
+    <section class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                📊
+            </div>
+
+
+            <div>
+
+                <span>
+                    CGPA
+                </span>
+
+                <h3>
+                    0.00
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+                🎯
+            </div>
+
+
+            <div>
+
+                <span>
+                    Parameter Score
+                </span>
+
+                <h3>
+                    0.00
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                🏆
+            </div>
+
+
+            <div>
+
+                <span>
+                    Current Rank
+                </span>
+
+                <h3>
+                    --
+                </h3>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                💻
+            </div>
+
+
+            <div>
+
+                <span>
+                    Career Interest
+                </span>
+
+                <h3>
+                    --
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MAIN GRID -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- PLACEMENT SCORE -->
+
+        <div
+            class="card score-card"
+            id="scoreSection"
+        >
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Placement Score
+                    </h2>
+
+                    <p>
+                        Your current performance breakdown
+                    </p>
+
+                </div>
+
+
+                <span class="status">
+                    Active
+                </span>
+
+            </div>
+
+
+
+            <div class="score-content">
+
+
+                <div class="score-circle">
+
+                    <div>
+
+                        <strong>
+                            0.00
+                        </strong>
+
+                        <span>
+                            / 10
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="score-details">
+
+
+                    <div class="score-row">
+
+                        <span>
+                            CGPA Score
+                        </span>
+
+                        <strong>
+                            0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill cgpa"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+
+
+                    <div class="score-row">
+
+                        <span>
+                            Parameter Score
+                        </span>
+
+                        <strong>
+                            0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill parameter"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+
+
+                    <div class="formula">
+
+                        <span>
+                            Overall Score
+                        </span>
+
+
+                        <strong>
+                            (0.00 + 0.00) / 2 = 0.00
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PLACEMENT RANKING -->
+
+        <div
+            class="card ranking-card"
+            id="rankingSection"
+        >
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Placement Ranking
+                    </h2>
+
+                    <p>
+                        Based on overall placement score
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#rankingSection"
+                    id="viewAllRanking"
+                >
+                    View All
+                </a>
+
+            </div>
+
+
+            <div
+                class="ranking-list"
+                id="rankingList"
+            >
+
+                <p>
+                    Loading ranking...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LOWER GRID -->
+
+    <section class="lower-grid">
+
+
+        <!-- PARAMETERS -->
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Placement Parameters
+                    </h2>
+
+                    <p>
+                        Your current skill levels
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="profile.html"
+                    id="editProfileLink"
+                >
+                    Edit
+                </a>
+
+            </div>
+
+
+
+            <div class="parameter-list">
+
+
+                <div class="parameter">
+
+                    <div class="parameter-top">
+
+                        <span>
+                            Programming
+                        </span>
+
+                        <strong>
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill parameter-1"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter">
+
+                    <div class="parameter-top">
+
+                        <span>
+                            DSA
+                        </span>
+
+                        <strong>
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill parameter-1"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter">
+
+                    <div class="parameter-top">
+
+                        <span>
+                            Communication
+                        </span>
+
+                        <strong>
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill parameter-1"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter">
+
+                    <div class="parameter-top">
+
+                        <span>
+                            Aptitude
+                        </span>
+
+                        <strong>
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill parameter-1"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter">
+
+                    <div class="parameter-top">
+
+                        <span>
+                            Project
+                        </span>
+
+                        <strong>
+                            Loading...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill parameter-1"
+                            style="width: 0%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TOP CANDIDATES -->
+
+        <div
+            class="card"
+            id="candidateSection"
+        >
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Top Candidates
+                    </h2>
+
+                    <p>
+                        Highest ranked students
+                    </p>
+
+                </div>
+
+
+                <span class="heap-badge">
+                    Max Heap
+                </span>
+
+            </div>
+
+
+            <div
+                class="candidate-list"
+                id="candidateList"
+            >
+
+                <p>
+                    Loading candidates...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PLACEMENT SIMULATOR
+    ================================================== -->
+
+    <section class="simulator-card">
+
+        <div class="simulator-content">
+
+            <div class="simulator-info">
+
+                <span class="simulator-label">
+                    PLACEMENT TOOL
+                </span>
+
+
+                <h2>
+                    Placement Simulator
+                </h2>
+
+
+                <p>
+                    Visualize the Max Heap ranking algorithm
+                    and see how candidates are ranked based
+                    on their placement scores.
+                </p>
+
+            </div>
+
+
+            <a
+                href="simulator.html"
+                class="simulator-btn"
+            >
+
+                Open Simulator
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SYSTEM INFO -->
+
+    <div class="system-info">
+
+        <span>
+            Placement Ranking System
+        </span>
+
+
+        <span>
+            Ranking generated using Max Heap
+        </span>
+
+    </div>
+
+
+</main>
+
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

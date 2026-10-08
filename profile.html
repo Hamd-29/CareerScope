@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | CareerScope</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo-area">
+        <img src="careerscope.png" alt="CareerScope Logo">
+    </div>
+
+    <nav>
+    <a href="landingpage.html">Home</a>
+    <a href="landingpage.html#about">About</a>
+    <a href="landingpage.html#features">Features</a>
+    <a href="simulator.html">Simulator</a>
+    <a href="landingpage.html#contact">Contact</a>
+</nav>
+
+</header>
+
+
+<main class="profile-page">
+
+    <div class="page-heading">
+
+        <div>
+
+            <span class="welcome-badge">
+                My Profile 👋
+            </span>
+
+            <h1>
+                Your Career Profile
+            </h1>
+
+            <p>
+                Manage your personal information and
+                placement preparation details.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <section class="profile-card">
+
+
+        <!-- ========================================
+             PROFILE HEADER
+        ========================================= -->
+
+        <div class="profile-top">
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar"
+            >
+                H
+            </div>
+
+
+            <div class="profile-name">
+
+                <h2 id="profileName">
+                    Loading...
+                </h2>
+
+                <p id="profileBranch">
+                    Loading...
+                </p>
+
+                <span class="active-status">
+                    ● Profile Active
+                </span>
+
+            </div>
+
+
+            <button
+                class="edit-btn"
+                onclick="enableEdit()"
+            >
+                Edit Profile
+            </button>
+
+        </div>
+
+
+
+        <!-- ========================================
+             PERSONAL INFORMATION
+        ========================================= -->
+
+        <div class="section">
+
+            <div class="section-title">
+
+                <h3>
+                    Personal Information
+                </h3>
+
+                <p>
+                    Your basic profile information
+                </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="input-box">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        disabled
+                    >
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        disabled
+                    >
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>
+                        Branch
+                    </label>
+
+                    <input
+                        type="text"
+                        id="college"
+                        disabled
+                    >
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>
+                        Semester
+                    </label>
+
+                    <input
+                        type="text"
+                        id="year"
+                        disabled
+                    >
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>
+                        PRN
+                    </label>
+
+                    <input
+                        type="text"
+                        id="prn"
+                        disabled
+                    >
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>
+                        Phone
+                    </label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        disabled
+                    >
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>
+                        CGPA
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cgpa"
+                        disabled
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ========================================
+             CAREER PREPARATION
+        ========================================= -->
+
+        <div class="section">
+
+
+            <div class="section-title">
+
+                <h3>
+                    Career Preparation
+                </h3>
+
+                <p>
+                    Your current placement preparation level
+                </p>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <!-- Programming -->
+
+                <div class="input-box">
+
+                    <label>
+                        Programming Skills
+                    </label>
+
+                    <select
+                        id="programming"
+                        disabled
+                    >
+
+                        <option>None</option>
+                        <option>Basic</option>
+                        <option>Moderate</option>
+                        <option>High</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DSA -->
+
+                <div class="input-box">
+
+                    <label>
+                        DSA Knowledge
+                    </label>
+
+                    <select
+                        id="dsa"
+                        disabled
+                    >
+
+                        <option>None</option>
+                        <option>Basic</option>
+                        <option>Moderate</option>
+                        <option>High</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Communication -->
+
+                <div class="input-box">
+
+                    <label>
+                        Communication Skills
+                    </label>
+
+                    <select
+                        id="communication"
+                        disabled
+                    >
+
+                        <option>None</option>
+                        <option>Basic</option>
+                        <option>Moderate</option>
+                        <option>High</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Aptitude -->
+
+                <div class="input-box">
+
+                    <label>
+                        Aptitude
+                    </label>
+
+                    <select
+                        id="aptitude"
+                        disabled
+                    >
+
+                        <option>None</option>
+                        <option>Basic</option>
+                        <option>Moderate</option>
+                        <option>High</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Projects -->
+
+                <div class="input-box">
+
+                    <label>
+                        Projects
+                    </label>
+
+                    <select
+                        id="projects"
+                        disabled
+                    >
+
+                        <option>None</option>
+                        <option>Basic</option>
+                        <option>Good</option>
+                        <option>Strong</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Certifications -->
+
+                <div class="input-box">
+
+                    <label>
+                        Certifications
+                    </label>
+
+                    <select
+                        id="certifications"
+                        disabled
+                    >
+
+                        <option>None</option>
+                        <option>1-2</option>
+                        <option>3+</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Experience -->
+
+                <div class="input-box">
+
+                    <label>
+                        Work Experience
+                    </label>
+
+                    <select
+                        id="experience"
+                        disabled
+                    >
+
+                        <option>None</option>
+                        <option>Basic</option>
+                        <option>Experienced</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Career Interest -->
+
+                <div class="input-box">
+
+                    <label>
+                        Career Interest
+                    </label>
+
+                    <input
+                        type="text"
+                        id="interest"
+                        disabled
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Technical Skills -->
+
+            <div class="input-box">
+
+                <label>
+                    Technical Skills
+                </label>
+
+                <input
+                    type="text"
+                    id="technicalSkills"
+                    disabled
+                >
+
+            </div>
+
+
+
+            <!-- Save -->
+
+            <div class="save-container">
+
+                <button
+                    class="save-btn"
+                    onclick="saveProfile()"
+                >
+                    Save Changes
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ========================================
+             PLACEMENT SCORE
+        ========================================= -->
+
+        <div class="score-section">
+
+            <div>
+
+                <span>
+                    PLACEMENT SCORE
+                </span>
+
+                <h2 id="placementScore">
+                    0.00
+                </h2>
+
+                <small>
+                    / 10
+                </small>
+
+            </div>
+
+
+            <div class="score-info">
+
+                <h3>
+                    Placement Readiness
+                </h3>
+
+                <p>
+                    Continue improving your technical,
+                    aptitude and communication skills.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>
+

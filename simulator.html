@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CareerScope - Placement Simulator</title>
+
+    <link
+        rel="stylesheet"
+        href="simulator.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo-area">
+
+            <img
+                src="careerscope.png"
+                alt="CareerScope"
+                class="logo"
+            >
+
+            <span>CareerScope</span>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a
+                href="simulator.html"
+                class="active"
+            >
+                Simulator
+            </a>
+
+        </div>
+
+
+        <button
+            class="logout"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </nav>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="simulator-container">
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <section class="page-header">
+
+            <div>
+
+                <p class="page-label">
+                    PLACEMENT SIMULATOR
+                </p>
+
+                <h1>
+                    Max Heap Ranking
+                </h1>
+
+                <p class="page-description">
+                    Watch how CareerScope organizes
+                    students using a real Max Heap
+                    based on their placement scores.
+                </p>
+
+            </div>
+
+
+            <div class="status-box">
+
+                <span
+                    class="status-dot"
+                    id="statusDot"
+                ></span>
+
+                <span id="statusText">
+                    Loading...
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTROL PANEL
+        ====================================== -->
+
+        <section class="control-panel">
+
+            <div class="control-info">
+
+                <span>
+                    Heap Operations
+                </span>
+
+                <small id="operationText">
+                    Ready to start
+                </small>
+
+            </div>
+
+
+            <div class="controls">
+
+                <button
+                    class="primary-btn"
+                    onclick="startSimulation()"
+                >
+                    ▶ Start Simulation
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="nextStep()"
+                >
+                    Next Step
+                </button>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="resetSimulation()"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MAIN GRID
+        ====================================== -->
+
+        <section class="simulation-grid">
+
+
+            <!-- =================================
+                 HEAP VISUALIZATION
+            ================================== -->
+
+            <div class="heap-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            DATA STRUCTURE
+                        </span>
+
+                        <h2>
+                            Max Heap
+                        </h2>
+
+                    </div>
+
+
+                    <div class="heap-size">
+
+                        <span>
+                            Heap Size
+                        </span>
+
+                        <strong id="heapSize">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Heap Tree -->
+
+                <div
+                    class="heap-container"
+                    id="heapContainer"
+                >
+
+                    <div class="empty-heap">
+
+                        <div class="empty-icon">
+                            ◇
+                        </div>
+
+                        <p>
+                            Start the simulation
+                        </p>
+
+                        <span>
+                            Heap nodes will appear here
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 CURRENT MAX
+            ================================== -->
+
+            <div class="max-card">
+
+                <span class="card-label">
+                    CURRENT MAX
+                </span>
+
+                <h2>
+                    Highest Ranked Student
+                </h2>
+
+
+                <div
+                    class="max-student"
+                    id="maxStudent"
+                >
+
+                    <div class="max-avatar">
+                        —
+                    </div>
+
+                    <div class="max-info">
+
+                        <strong>
+                            Waiting...
+                        </strong>
+
+                        <span>
+                            Start simulation
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="max-score">
+
+                    <span>
+                        Placement Score
+                    </span>
+
+                    <strong id="maxScore">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             RANKING
+        ====================================== -->
+
+        <section class="ranking-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="card-label">
+                        LIVE RANKING
+                    </span>
+
+                    <h2>
+                        Placement Order
+                    </h2>
+
+                </div>
+
+
+                <span
+                    class="candidate-count"
+                    id="candidateCount"
+                >
+                    0 Candidates
+                </span>
+
+            </div>
+
+
+            <div
+                class="ranking-list"
+                id="rankingList"
+            >
+
+                <div class="ranking-empty">
+
+                    Start the simulation to
+                    generate ranking.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ALGORITHM INFO
+        ====================================== -->
+
+        <section class="algorithm-card">
+
+            <div class="algorithm-title">
+
+                <span class="card-label">
+                    ALGORITHM
+                </span>
+
+                <h2>
+                    How Max Heap Works
+                </h2>
+
+            </div>
+
+
+            <div class="algorithm-steps">
+
+
+                <div class="algorithm-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Insert
+                        </strong>
+
+                        <p>
+                            Student scores are inserted
+                            into the Max Heap.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="algorithm-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Compare
+                        </strong>
+
+                        <p>
+                            Each node is compared
+                            with its parent.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="algorithm-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Heapify
+                        </strong>
+
+                        <p>
+                            Higher scores move toward
+                            the root.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="algorithm-step">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Remove Max
+                        </strong>
+
+                        <p>
+                            The highest score becomes
+                            the next ranked candidate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="simulator.js"></script>
+
+</body>
+
+</html>

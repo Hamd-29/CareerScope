@@ -1,0 +1,355 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerScope | Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="loginpage.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <a href="landingpage.html">
+
+                    <img
+                        src="careerscope.png"
+                        alt="CareerScope"
+                    >
+
+                </a>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="landingpage.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="landingpage.html#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="landingpage.html#features">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        Simulator
+                    </a>
+                </li>
+
+                <li>
+                    <a href="landingpage.html#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="left">
+
+            <div class="welcome-badge">
+
+                Welcome Back! 👋
+
+            </div>
+
+
+            <h2>
+                Welcome Back!
+            </h2>
+
+
+            <p>
+                <b>Your Career. Your Preparation. Your Success</b>
+            </p>
+
+
+            <img
+                src="placements.jpg"
+                alt="Career Illustration"
+            >
+
+        </section>
+
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <section class="right">
+
+
+            <!-- LOGIN CARD -->
+
+            <div class="login-card">
+
+
+                <h1>
+                    Welcome Back!
+                </h1>
+
+
+                <p>
+                    Sign in to access your account and continue
+                    your placement journey.
+                </p>
+
+
+
+                <!-- ================= FORM ================= -->
+
+                <form>
+
+
+                    <!-- EMAIL -->
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <i
+                            class="fa-regular fa-eye password-eye"
+                            id="togglePassword"
+                        ></i>
+
+                    </div>
+
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="options">
+
+                        <div class="remember-box">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <label for="remember">
+                                Remember Me
+                            </label>
+
+                        </div>
+
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+                        Login
+                    </button>
+
+
+
+                    <!-- OR -->
+
+                    <div class="divider">
+
+                        <span>
+                            OR
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- GOOGLE LOGIN -->
+
+                    <button
+                        type="button"
+                        class="google-btn"
+                        id="googleLoginBtn"
+                    >
+
+                        <img
+                            src="google.png"
+                            alt="Google"
+                        >
+
+                        <span>
+                            Continue with Google
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- SIGN UP -->
+
+                <p class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Sign up
+                    </a>
+
+                </p>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= PASSWORD SHOW/HIDE ================= -->
+
+    <script>
+
+        const password =
+            document.getElementById("password");
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+
+        togglePassword.addEventListener(
+            "click",
+            function () {
+
+                if (password.type === "password") {
+
+                    password.type = "text";
+
+                    togglePassword.classList.remove(
+                        "fa-eye"
+                    );
+
+                    togglePassword.classList.add(
+                        "fa-eye-slash"
+                    );
+
+                } else {
+
+                    password.type = "password";
+
+                    togglePassword.classList.remove(
+                        "fa-eye-slash"
+                    );
+
+                    togglePassword.classList.add(
+                        "fa-eye"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
+```

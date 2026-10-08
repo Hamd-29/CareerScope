@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerScope - Sign Up</title>
+
+    <link rel="stylesheet" href="signup.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="careerscope.png" alt="CareerScope">
+        </div>
+
+        <div class="nav-login">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </div>
+
+    </header>
+
+
+    <!-- Signup Section -->
+    <main class="signup-container">
+
+        <!-- Left Section -->
+        <section class="signup-info">
+
+            <span class="badge">CareerScope</span>
+
+            <h1>
+                Start Your
+                <span>Placement Journey.</span>
+            </h1>
+
+            <p>
+                Create your student account and build your placement profile
+                to discover your ranking and career opportunities.
+            </p>
+
+            <div class="info-points">
+
+                <div class="info-item">
+                    <div class="icon">✓</div>
+                    <div>
+                        <h3>Build Your Profile</h3>
+                        <p>Add your academic and personal details.</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">✓</div>
+                    <div>
+                        <h3>Track Your Score</h3>
+                        <p>Monitor your placement performance.</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon">✓</div>
+                    <div>
+                        <h3>View Rankings</h3>
+                        <p>See your position among students.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Signup Card -->
+        <section class="signup-card">
+
+            <div class="form-header">
+                <h2>Create Account</h2>
+                <p>Enter your details to get started.</p>
+            </div>
+
+
+            <form id="signupForm">
+
+                <!-- Personal Information -->
+                <h3 class="section-title">Personal Information</h3>
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter full name"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="prn">PRN</label>
+                        <input
+                            type="text"
+                            id="prn"
+                            placeholder="Enter PRN"
+                            required>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter email"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required>
+                    </div>
+
+                </div>
+
+
+                <!-- Academic Information -->
+                <h3 class="section-title">Academic Information</h3>
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="branch">Branch</label>
+
+                        <select id="branch" required>
+                            <option value="">Select branch</option>
+                            <option>Computer Engineering</option>
+                            <option>Information Technology</option>
+                            <option>Electronics Engineering</option>
+                            <option>Mechanical Engineering</option>
+                            <option>Civil Engineering</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="semester">Semester</label>
+
+                        <select id="semester" required>
+                            <option value="">Select semester</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+                    <label for="cgpa">CGPA</label>
+
+                    <input
+                        type="number"
+                        id="cgpa"
+                        placeholder="Enter CGPA"
+                        min="0"
+                        max="10"
+                        step="0.01"
+                        required>
+                </div>
+
+
+                <!-- Account Information -->
+                <h3 class="section-title">Account Information</h3>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create password"
+                        required>
+                </div>
+
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm password"
+                        required>
+                </div>
+
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+
+                    <label for="terms">
+                        I agree to the terms and conditions.
+                    </label>
+                </div>
+
+
+                <button type="submit" class="signup-btn">
+                    Create Account
+                </button>
+
+
+                <p class="login-text">
+                    Already have an account?
+                    <a href="login.html">Login here</a>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="signup.js"></script>
+
+</body>
+
+</html>
