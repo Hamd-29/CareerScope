@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerScope | Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- ADMIN LOGIN -->
+    <section id="loginScreen" class="login-screen">
+        <form id="loginForm" class="login-card">
+
+            <img src="careerscope.png" alt="CareerScope" class="login-logo">
+
+            <p class="eyebrow">CAREERSCOPE ADMINISTRATION</p>
+            <h1>Welcome back.</h1>
+            <p class="muted">Sign in to manage student placement data.</p>
+
+            <label for="username">Username</label>
+            <input
+                id="username"
+                type="text"
+                placeholder="Enter admin username"
+                autocomplete="username"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                id="password"
+                type="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button class="primary-btn login-btn" type="submit">
+                <span id="loginButtonText">Sign in to dashboard</span>
+                <span>→</span>
+            </button>
+
+            <p id="loginMessage" class="message" role="status"></p>
+
+            <p class="login-footer">
+                Restricted access for CareerScope administrators.
+            </p>
+        </form>
+    </section>
+
+
+    <!-- ADMIN DASHBOARD -->
+    <div id="dashboardScreen" class="app hidden">
+
+        <!-- NAVBAR -->
+        <header class="top-navbar">
+
+            <a href="#" class="brand">
+                <img
+                    src="careerscope.png"
+                    alt="CareerScope Logo"
+                    class="admin-logo"
+                >
+            </a>
+
+            <nav class="top-nav">
+                <button class="nav active" data-view="overview">
+                    Overview
+                </button>
+
+                <button class="nav" data-view="students">
+                    Students
+                </button>
+
+                <button class="nav" data-view="ranking">
+                    Placement Ranking
+                </button>
+            </nav>
+
+            <div class="nav-right">
+                <span class="admin-pill">
+                    <span class="dot"></span>
+                    Administrator
+                </span>
+
+                <button id="logoutBtn" class="logout-btn">
+                    Log out ↗
+                </button>
+            </div>
+
+        </header>
+
+
+        <main class="main">
+
+            <!-- OVERVIEW -->
+            <section id="overviewView">
+
+                <div class="page-heading">
+                    <div>
+                        <p class="eyebrow">ADMIN WORKSPACE</p>
+                        <h1>Dashboard Overview</h1>
+                        <p class="muted">
+                            Monitor student records and placement readiness.
+                        </p>
+                    </div>
+
+                    <button id="refreshOverview" class="secondary-btn">
+                        ↻ Refresh
+                    </button>
+                </div>
+
+
+                <!-- WELCOME BANNER -->
+                <section class="welcome">
+
+                    <div class="welcome-content">
+                        <p class="eyebrow light">
+                            SMART CAMPUS PLACEMENT SYSTEM
+                        </p>
+
+                        <h2>Welcome to CareerScope.</h2>
+
+                        <p>
+                            Manage student information and track placement
+                            rankings in one place.
+                        </p>
+
+                        <button
+                            class="welcome-btn"
+                            data-view="students"
+                            type="button"
+                        >
+                            Manage Students →
+                        </button>
+                    </div>
+
+                    <div class="welcome-image">
+                        <img
+                            src="placements.jpg"
+                            alt="Students collaborating on career preparation"
+                        >
+                    </div>
+
+                </section>
+
+
+                <!-- STATISTICS -->
+                <div class="stats">
+
+                    <article class="stat">
+                        <div class="stat-top">
+                            <span>Total Students</span>
+                            <span class="stat-icon">♙</span>
+                        </div>
+
+                        <h2 id="totalStudents">—</h2>
+                        <p>Registered student records</p>
+                    </article>
+
+
+                    <article class="stat">
+                        <div class="stat-top">
+                            <span>Average Score</span>
+                            <span class="stat-icon">↗</span>
+                        </div>
+
+                        <h2 id="averageScore">—</h2>
+                        <p>Average overall score</p>
+                    </article>
+
+
+                    <article class="stat">
+                        <div class="stat-top">
+                            <span>Total Branches</span>
+                            <span class="stat-icon">▦</span>
+                        </div>
+
+                        <h2 id="totalBranches">—</h2>
+                        <p>Branches represented</p>
+                    </article>
+
+                </div>
+
+
+                <!-- TOP STUDENTS -->
+                <section class="panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Top Performing Students</h2>
+                            <p>Students ranked by overall score</p>
+                        </div>
+
+                        <button class="text-btn" data-view="ranking">
+                            View all rankings →
+                        </button>
+                    </div>
+
+                    <div id="topStudents" class="table-wrap">
+                        <p class="empty-state">Loading student data...</p>
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- STUDENTS -->
+            <section id="studentsView" class="hidden">
+
+                <div class="page-heading">
+                    <div>
+                        <p class="eyebrow">STUDENT DATABASE</p>
+                        <h1>Student Management</h1>
+                        <p class="muted">
+                            View and search registered student records.
+                        </p>
+                    </div>
+
+                    <button id="refreshStudents" class="secondary-btn">
+                        ↻ Refresh
+                    </button>
+                </div>
+
+
+                <section class="panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>All Students</h2>
+                            <p id="studentCount">Registered records</p>
+                        </div>
+
+                        <input
+                            id="studentSearch"
+                            class="search"
+                            type="search"
+                            placeholder="Search name, PRN, branch..."
+                        >
+                    </div>
+
+                    <div id="studentsTable" class="table-wrap">
+                        <p class="empty-state">Loading student data...</p>
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- RANKING -->
+            <section id="rankingView" class="hidden">
+
+                <div class="page-heading">
+                    <div>
+                        <p class="eyebrow">PLACEMENT ANALYTICS</p>
+                        <h1>Placement Ranking</h1>
+                        <p class="muted">
+                            Compare student scores in descending order.
+                        </p>
+                    </div>
+
+                    <button id="refreshRanking" class="secondary-btn">
+                        ↻ Refresh
+                    </button>
+                </div>
+
+
+                <section class="panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Student Leaderboard</h2>
+                            <p>Based on the saved overall score in the database</p>
+                        </div>
+                    </div>
+
+                    <div id="rankingTable" class="table-wrap">
+                        <p class="empty-state">Loading ranking...</p>
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <p id="globalMessage" class="global-message" role="status"></p>
+
+            <footer class="footer">
+                CareerScope · Smart Campus Placement Ranking System
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -65,6 +65,9 @@ public class CareerScopeServer {
                     "/api/jobs",
                     JobHandler::handle
             );
+            server.createContext("/api/admin/login", AdminHandler::login);
+server.createContext("/api/admin/students", AdminHandler::students);
+server.createContext("/api/admin/ranking", AdminHandler::ranking);
 
 
             // =========================
